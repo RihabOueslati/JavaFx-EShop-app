@@ -1,7 +1,8 @@
 JavaFX
-Javafx esprit mini project (deal for all)
+esprit mini project (deal for all)
 
-Description
+Description :
+
 Create a desktop app for managing deals . Requirements
 
 Create a project called "dealforall" using IntelliJ's JavaFX template.
