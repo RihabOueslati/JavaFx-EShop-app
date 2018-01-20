@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.paint.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="559.0" prefWidth="911.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealforall.div.gui.MenuReclamationController">
+    <stylesheets>
+        <URL value="@menuservice.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="17.0" layoutY="16.0" prefHeight="521.0" prefWidth="1117.0">
+         <children>
+            <Pane layoutX="6.0" layoutY="83.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="208.0" styleClass="nav_pane">
+               <children>
+                  <Button fx:id="btnMenu_AddReclamation" layoutX="13.0" layoutY="33.0" mnemonicParsing="false" onAction="#goAddReclamation" prefHeight="23.0" prefWidth="181.0" styleClass="btn-success" text="Ajouter Reclamation" />
+                  <Button fx:id="btnMenu_UpdateReclamation" layoutX="14.0" layoutY="228.0" mnemonicParsing="false" onAction="#goUpdateReclamation" prefHeight="23.0" prefWidth="181.0" styleClass="btn-blue" text="Modifier Information " />
+               </children>
+            </Pane>
+         </children>
+         <stylesheets>
+            <URL value="@../../ressources/style/style.css" />
+            <URL value="@../../../ressources/style/style.css" />
+         </stylesheets>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="269.0" />
+      <HBox fx:id="hboxNav" layoutX="37.0" layoutY="40.0" prefHeight="39.0" prefWidth="1166.0" styleClass="bar">
+         <children>
+            <Pane prefHeight="40.0" prefWidth="269.0" HBox.hgrow="ALWAYS" />
+            <Separator minHeight="-Infinity" orientation="VERTICAL" prefHeight="35.0" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

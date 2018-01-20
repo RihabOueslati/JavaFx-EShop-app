@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.media.*?>
+<?import java.net.*?>
+<?import java.net.URL?>
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+
+<AnchorPane id="AnchorPane" fx:id="pane" layoutX="10.0" layoutY="10.0" maxHeight="610.0" maxWidth="1200.0" minHeight="610.0" minWidth="1200.0" prefHeight="610.0" prefWidth="1200.0" style="-fx-background-color: lightblue;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealforall.div.gui.HomeScreenController">
+         <children>
+      <Button fx:id="button5" layoutX="167.0" layoutY="126.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="340.0" prefWidth="887.0" styleClass="bestGuides_btn2" />
+      <Pane fx:id="ProfilePane" layoutX="25.0" layoutY="86.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="208.0" styleClass="profile_pane">
+         <children>
+            <ImageView fx:id="profile_pic" fitHeight="49.0" fitWidth="50.0" layoutX="26.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/images/unavailable_pic.jpg" />
+               </image>
+            </ImageView>
+            <Label fx:id="fName" layoutX="90.0" layoutY="34.0" style="-fx-font-size: 18;" />
+            <Label fx:id="lName" layoutX="90.0" layoutY="60.0" style="-fx-font-size: 18;" />
+            <Label fx:id="points" layoutX="90.0" layoutY="85.0" prefHeight="23.0" prefWidth="98.0" />
+            <Label fx:id="email" layoutX="14.0" layoutY="118.0" prefHeight="23.0" prefWidth="181.0" />
+            <Label fx:id="typeC" layoutX="14.0" layoutY="141.0" prefHeight="23.0" prefWidth="181.0" />
+            <Label fx:id="numTel" layoutX="14.0" layoutY="187.0" prefHeight="23.0" prefWidth="181.0" />
+            <Label fx:id="adresse" layoutX="14.0" layoutY="164.0" prefHeight="23.0" prefWidth="181.0" />
+            <ToggleButton fx:id="newsletterToggleBtn" contentDisplay="CENTER" layoutX="13.0" layoutY="216.0" mnemonicParsing="false" onAction="#rotate" prefHeight="49.0" prefWidth="182.0" styleClass="toggle" textAlignment="CENTER" wrapText="true" />
+         </children>
+      </Pane>
+      <Pane layoutX="941.0" layoutY="86.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="208.0" styleClass="nav_pane">
+         <children>
+            <MediaView fx:id="mv" fitHeight="200.0" fitWidth="186.0" layoutX="11.0" layoutY="63.0" style="-fx-scale-y: 1.7;" />
+         </children></Pane>
+      <Pane layoutY="599.0" minHeight="-Infinity" prefHeight="31.0" prefWidth="847.0" />
+      <Label fx:id="etatNewsletter" alignment="CENTER" contentDisplay="CENTER" layoutX="229.0" layoutY="562.0" prefHeight="20.0" prefWidth="427.0" />
+      <HBox fx:id="hboxNav" layoutX="27.0" layoutY="30.0" prefHeight="39.0" prefWidth="1166.0" style="-fx-background-color: transparent;" styleClass="bar">
+         <children>
+            <ImageView fx:id="logo1" fitHeight="35.0" fitWidth="169.0" pickOnBounds="true" preserveRatio="true" styleClass="logo_btn">
+               <image>
+                  <Image url="@../ressources/images/logo.png" />
+               </image>
+            </ImageView>
+            <Pane prefHeight="40.0" prefWidth="269.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="13.0" layoutY="-3.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="45.0" styleClass="home_btn" />
+               </children></Pane>
+            <Button fx:id="dashbord_btn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#showDashbord" prefHeight="35.0" styleClass="pie_btn" text="Dashbord" />
+            <Button fx:id="login_btn" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" onAction="#launchLoginForm" prefHeight="40.0" prefWidth="118.0" styleClass="Login_btn" text="Se Connecter" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="userMenu" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" styleClass="profile_btn" text="Name" HBox.hgrow="ALWAYS">
+               <items>
+                  <MenuItem fx:id="Profile_btn" disable="true" mnemonicParsing="false" text="Profile" />
+                  <MenuItem fx:id="logout_btn" mnemonicParsing="false" onAction="#logoutButton" text="Logout" />
+               </items>
+            </MenuButton>
+         </children>
+      </HBox>
+      <HBox fx:id="hboxNav1" layoutX="13.0" layoutY="553.0" prefHeight="20.0" prefWidth="1166.0" style="-fx-background-color: transparent;" styleClass="bar">
+         <children>
+            <Button fx:id="internet_btn" contentDisplay="GRAPHIC_ONLY" disable="true" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="22.0" prefWidth="22.0" styleClass="internet_btn" />
+            <Label fx:id="online_label" prefHeight="20.0" prefWidth="80.0" />
+            <Label prefHeight="20.0" prefWidth="300.0" />
+            <Label prefHeight="20.0" prefWidth="565.0" />
+            <Label minHeight="-Infinity" prefHeight="30.0" prefWidth="208.0" text="(c) 2016 Esprit All Rights Reserved" />
+            <Button fx:id="btn_exit" mnemonicParsing="false" onAction="#handleExitButtonAction" prefHeight="38.0" prefWidth="40.0" styleClass="signout_btn" />
+         </children>
+      </HBox>
+      <Button fx:id="about" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="836.0" layoutY="522.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setNavigation" prefHeight="63.0" prefWidth="80.0" styleClass="footerimg1" stylesheets="@../../../ressources/style/style.css" text="footer2" />
+      <Button fx:id="contact" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="287.0" layoutY="522.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setNavigation" prefHeight="63.0" prefWidth="80.0" styleClass="footerimg2" text="footer1">
+         <stylesheets>
+            <URL value="@../../../ressources/style/style.css" />
+            <URL value="@../ressources/style/style.css" />
+         </stylesheets></Button>
+      <Pane layoutX="346.0" layoutY="215.0" prefHeight="137.0" prefWidth="427.0">
+         <children>
+            <ImageView fx:id="sliderPart1" fitHeight="123.0" fitWidth="452.0" layoutX="59.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../ressources/images/logo-groupe.png" />
+               </image>
+            </ImageView>
+         </children></Pane>
+      <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="489.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="137.0" prefWidth="427.0" styleClass="bestExper_btn" text="Experience" />
+      <Button fx:id="navGuides" alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="36.0" layoutY="365.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#setNavigation" prefHeight="137.0" prefWidth="427.0" styleClass="bestGuides_btn" text="Guides" />
+      <Pane layoutX="941.0" layoutY="323.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="208.0" styleClass="nav_pane">
+         <children>
+            <MediaView fx:id="mv1" fitHeight="200.0" fitWidth="186.0" layoutX="11.0" layoutY="63.0" style="-fx-scale-y: 1.7;" />
+         </children>
+      </Pane>
+    </children>
+   <stylesheets>
+      <URL value="@style.css" />
+      <URL value="@../ressources/style/style.css" />
+   </stylesheets>
+</AnchorPane>

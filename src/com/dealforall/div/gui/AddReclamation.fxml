@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="559.0" prefWidth="911.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.dealforall.div.gui.AddReclamationController">
+    <stylesheets>
+        <URL value="@menuservice.css" />
+    </stylesheets>
+   <children>
+      <Pane layoutX="17.0" layoutY="16.0" prefHeight="521.0" prefWidth="1117.0">
+         <children>
+            <Pane layoutX="6.0" layoutY="109.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="286.0" prefWidth="208.0" styleClass="nav_pane">
+               <children>
+                  <Button fx:id="btnMenu_AddService" disable="true" layoutX="13.0" layoutY="33.0" mnemonicParsing="false" onAction="#goAddService" prefHeight="23.0" prefWidth="181.0" styleClass="btn-success" text="Exposer un Service" />
+                  <Button fx:id="btnMenu_UpdateService" layoutX="13.0" layoutY="73.0" mnemonicParsing="false" onAction="#goUpdateService" prefHeight="23.0" prefWidth="181.0" styleClass="btn-blue" text="Modifier un Service" />
+                  <Button fx:id="btnMenu_DeleteService" layoutX="13.0" layoutY="153.0" mnemonicParsing="false" onAction="#goDeleteService" prefHeight="23.0" prefWidth="181.0" styleClass="btn-danger" text="Supprimer un Service" />
+                  <Button fx:id="btnMenu_RendreService" layoutX="13.0" layoutY="113.0" mnemonicParsing="false" onAction="#goRendreService" prefHeight="23.0" prefWidth="181.0" styleClass="btn-warning" text="Rendre un Service" />
+                  <Button fx:id="btnMenu_DisplayServicesFirst" layoutX="14.0" layoutY="193.0" mnemonicParsing="false" onAction="#goDisplayServicesFirst" prefHeight="23.0" prefWidth="181.0" styleClass="btn-primary" text="Consulter les Services" />
+                  <Button fx:id="btnMenu_SearchService" layoutX="14.0" layoutY="233.0" mnemonicParsing="false" prefHeight="23.0" prefWidth="181.0" styleClass="btn-gray" text="Chercher un Service" />
+               </children>
+            </Pane>
+            <Pane layoutX="226.0" layoutY="89.0" prefHeight="347.0" prefWidth="615.0" />
+            <GridPane layoutX="247.0" layoutY="130.0" prefHeight="311.0" prefWidth="615.0">
+               <children>
+                  <Label text="Nom de Service :" />
+                  <Label contentDisplay="TOP" text="Adresse :" textAlignment="CENTER" GridPane.rowIndex="1" />
+                  <Label prefHeight="17.0" prefWidth="80.0" text="Catégorie :" GridPane.rowIndex="2" />
+                  <Label text="Date d'expiration :" GridPane.rowIndex="3" />
+                  <Label text="Description :" GridPane.rowIndex="4" />
+                  <TextField fx:id="TNom" promptText="Tapez Nom Service" style="-fx-background-radius: 20;" GridPane.columnIndex="1" />
+                  <TextField fx:id="TAdresse" promptText="Tapez Adresse" style="-fx-background-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                  <ComboBox fx:id="CbCategorie" prefHeight="25.0" prefWidth="195.0" promptText="Services d’entretien et de réparation" style="-fx-background-radius: 40;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                  <DatePicker fx:id="TDate" promptText="Tapez Date" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                  <TextArea fx:id="TDescription" prefHeight="103.0" prefWidth="139.0" promptText="Tapez la Description " style="-fx-border-radius: 20;" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                     <GridPane.margin>
+                        <Insets top="20.0" />
+                     </GridPane.margin>
+                  </TextArea>
+                  <Label text="Photo :" GridPane.columnIndex="2">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Label>
+                  <Button fx:id="btnChoisirImage" mnemonicParsing="false" onAction="#ChoiceImage" prefHeight="32.0" prefWidth="147.0" style="-fx-background-radius: 40; -fx-border-color: white;" styleClass="btn-primary" text="Chercher Photo" textAlignment="CENTER" GridPane.columnIndex="3">
+                     <opaqueInsets>
+                        <Insets />
+                     </opaqueInsets>
+                     <font>
+                        <Font size="9.0" />
+                     </font>
+                     <GridPane.margin>
+                        <Insets />
+                     </GridPane.margin>
+                  </Button>
+                  <ImageView fx:id="IImage" fitHeight="113.0" fitWidth="150.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <image>
+                        <Image url="@../../../ressources/img/taher.jpg" />
+                     </image>
+                     <GridPane.margin>
+                        <Insets left="55.0" />
+                     </GridPane.margin>
+                  </ImageView>
+                  <Button fx:id="Btn_Exposer" mnemonicParsing="false" onAction="#ExposerService" prefHeight="25.0" prefWidth="143.0" style="-fx-background-radius: 40; -fx-border-color: white;" styleClass="btn-success" text="Exposer Le service" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                     <GridPane.margin>
+                        <Insets left="20.0" />
+                     </GridPane.margin>
+                  </Button>
+                  <Button fx:id="AnnulerAjoutService" cancelButton="true" mnemonicParsing="false" style="-fx-background-radius: 40; -fx-border-color: white;" styleClass="btn-warning" text="Annuler" GridPane.columnIndex="2" GridPane.rowIndex="5" />
+               </children>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="180.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="60.0" vgrow="SOMETIMES" />
+               </rowConstraints>
+            </GridPane>
+         </children>
+         <stylesheets>
+            <URL value="@../../ressources/style/style.css" />
+            <URL value="@../../../ressources/style/style.css" />
+         </stylesheets>
+      </Pane>
+      <Pane layoutX="10.0" layoutY="10.0" prefHeight="40.0" prefWidth="269.0" />
+      <HBox fx:id="hboxNav" layoutX="37.0" layoutY="40.0" prefHeight="39.0" prefWidth="1166.0" styleClass="bar">
+         <children>
+            <Pane prefHeight="59.0" prefWidth="723.0" HBox.hgrow="ALWAYS">
+               <children>
+                  <ImageView fx:id="logo" fitHeight="97.0" fitWidth="97.0" layoutX="52.0" layoutY="-27.0" pickOnBounds="true" styleClass="logo_btn">
+                     <image>
+                        <Image url="@../../../ressources/img/dfa.png" />
+                     </image>
+                  </ImageView>
+                  <Button alignment="CENTER" contentDisplay="GRAPHIC_ONLY" layoutX="168.0" layoutY="-1.0" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="45.0" styleClass="home_btn" stylesheets="@../../../ressources/style/style.css" />
+                  <Separator layoutX="165.0" layoutY="-1.0" orientation="VERTICAL" prefHeight="49.0" prefWidth="0.0" />
+               </children>
+            </Pane>
+            <MenuButton fx:id="notif_btn" alignment="CENTER" contentDisplay="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="40.0" prefWidth="57.0" styleClass="notif_btn">
+               <items>
+                  <MenuItem fx:id="newMessages" mnemonicParsing="false" />
+                  <MenuItem mnemonicParsing="false" />
+               </items>
+            </MenuButton>
+            <Button fx:id="dashbord_btn" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" styleClass="pie_btn" text="Dashbord" />
+            <Button fx:id="login_btn" alignment="CENTER" graphicTextGap="10.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="118.0" styleClass="Login_btn" text="Login" HBox.hgrow="ALWAYS" />
+            <MenuButton fx:id="userMenu" alignment="CENTER" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="35.0" prefWidth="154.0" styleClass="profile_btn" text="Name" HBox.hgrow="ALWAYS">
+               <items>
+                  <MenuItem disable="true" mnemonicParsing="false" text="Profile" />
+                  <MenuItem fx:id="logout_btn" mnemonicParsing="false" text="Logout" />
+               </items>
+            </MenuButton>
+            <Separator minHeight="-Infinity" orientation="VERTICAL" prefHeight="35.0" />
+            <Button fx:id="btn_exit" mnemonicParsing="false" prefHeight="38.0" prefWidth="40.0" styleClass="signout_btn" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
